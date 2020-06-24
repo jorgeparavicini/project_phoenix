@@ -14,5 +14,4 @@ public static class Initializer
         var display = Display.displays[1];
         display.Activate();
     }
-    dlaskfjalnf
 }
