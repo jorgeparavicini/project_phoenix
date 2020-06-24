@@ -1,0 +1,13 @@
+﻿.package-parent {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.range-value {
+    margin-left: 150px;
+}

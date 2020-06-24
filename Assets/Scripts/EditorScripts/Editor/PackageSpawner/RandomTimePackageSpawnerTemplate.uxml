@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UXML
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="UnityEngine.UIElements"
+  xmlns:ue="UnityEditor.UIElements"
+  xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+  xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
+
+  <VisualElement>
+    <MinMaxSlider label="Respawn Time" low-limit="0" high-limit="8" binding-path="Range" min-value="1" max-value="3"/>
+    <VisualElement class="row">
+      <Label text="Min:" name="min" class="range-value"/>
+      <Label text="Max: " name="max" class="range-value"/>
+    </VisualElement>
+  </VisualElement>
+
+</UXML>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<UXML
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="UnityEngine.UIElements"
+  xmlns:ue="UnityEditor.UIElements"
+  xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+  xsi:schemaLocation="UnityEngine.UIElements ../UiElementsSchema/UnityEngine.UIElements.xsd">
+  <VisualElement class="package-item">
+    <ue:ObjectField binding-path="Package" label="Package" allow-scene-objects="false" class="row"/>
+    <VisualElement class="row">
+      <Label text="Max Spawns" class="max-spawns"/>
+      <Toggle binding-path="HasMaxSpawns" name="hasMaxSpawns"/>
+      <ue:IntegerField binding-path="MaxSpawns" name="maxSpawns" class="expand"/>
+    </VisualElement>
+    <ue:IntegerField binding-path="Priority" label="Priority" name="priority" class="row"/>
+  </VisualElement>
+</UXML>
