@@ -8,7 +8,6 @@ using JetBrains.Annotations;
 using Level.Packages;
 using Level.Path;
 using TMPro;
-using Unity.Assertions;
 using Unity.Collections;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -72,7 +71,6 @@ namespace Level.Containers
 
             if (_controlledPackage is null) return;
 
-            Assert.IsNotNull(_controlledElement, "_controlledPackageHighlight != null");
 
             SnapToGrid(_controlledElement, _controlledPackage.transform, _pathElementZOffset);
             _controlledElement.Valid = IsOccupied(_controlledElement.GridPoint);
