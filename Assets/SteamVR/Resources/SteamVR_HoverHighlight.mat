@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SteamVR_HoverHighlight
-  m_Shader: {fileID: 4800000, guid: 4e76d4023d7e0411297c670f878973e2, type: 3}
+  m_Shader: {fileID: 4800000, guid: 83dad9aa8d6cebf40ae959ecbffd100a, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -58,6 +58,7 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _Darken: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -68,6 +69,8 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineWidth: 2
     - _Parallax: 0.02
+    - _Scl: 2
+    - _SeeThru: 0.25
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -77,8 +80,9 @@ Material:
     - g_flCornerAdjust: 0.5
     - g_flOutlineWidth: 0.005
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
     - g_vOutlineColor: {r: 0.94509804, g: 0.92156863, b: 0, a: 1}
   m_BuildTextureStacks: []
