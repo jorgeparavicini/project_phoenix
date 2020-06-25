@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013594048110}
   - component: {fileID: 7511190378632425564}
+  - component: {fileID: 3061947050756063612}
   m_Layer: 0
   m_Name: car-baywatch
   m_TagString: Untagged
@@ -55,6 +56,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3061947050756063612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014134977340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10e87a2460eda1449574dd4b9fc7221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstDelay: 0
+  Delay: 10
 --- !u!1 &1180540006582304
 GameObject:
   m_ObjectHideFlags: 0

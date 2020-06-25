@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 33572513205776078}
   - component: {fileID: 23442061015294922}
   - component: {fileID: 64668996058382554}
-  - component: {fileID: 4603191814673378453}
+  - component: {fileID: 6282440512608129996}
   m_Layer: 0
   m_Name: spitfire-propeller
   m_TagString: Untagged
@@ -296,7 +296,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 8c1b81837ae4e45f384dc479656270de, type: 3}
---- !u!95 &4603191814673378453
+--- !u!95 &6282440512608129996
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -617,7 +617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4175429436720414}
-  - component: {fileID: 2427430346217833799}
+  - component: {fileID: 2029789550641725901}
   m_Layer: 0
   m_Name: spitfire
   m_TagString: Untagged
@@ -647,7 +647,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2427430346217833799
+--- !u!95 &2029789550641725901
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
