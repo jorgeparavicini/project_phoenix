@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &108590228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7946252784431842537, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+  m_PrefabInstance: {fileID: 1686870224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &108590229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108590228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff4b6ffac65a7f449ece156be893e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyCode: 112
 --- !u!114 &361420747 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4478141556347420907, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
@@ -134,6 +152,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57af4db4f4c9e244e904976ba22655fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &537884023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6206866018591736187, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+  m_PrefabInstance: {fileID: 1686870224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &537884028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537884023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &546161603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -243,6 +297,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0c6f136dcdc5440bd3c4477f0a2240, type: 3}
+--- !u!1 &763718787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6206866018591759627, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+  m_PrefabInstance: {fileID: 1686870224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &763718791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763718787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &1172701481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,11 +514,15 @@ PrefabInstance:
     - target: {fileID: 6013942963122754009, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 931df8a3a30936c439895afa18c82688, type: 2}
     - target: {fileID: 6079245584150018955, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 931df8a3a30936c439895afa18c82688, type: 2}
+    - target: {fileID: 6206866018585110307, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: highLightMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 106f3ff43a17d4967a2b64c7a92e49ec, type: 2}
     - target: {fileID: 7946252782906197560, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: _levelName
       value: Color Level
