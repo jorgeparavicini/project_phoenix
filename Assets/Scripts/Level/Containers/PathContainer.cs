@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using EventArgs;
 using JetBrains.Annotations;
 using Level.Packages;
 using Level.Path;
-using TMPro;
-using Unity.Collections;
-using UnityEditor.Rendering;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
