@@ -17,7 +17,7 @@ namespace UI
         public GameObject GameStartButton;
         public TextMeshProUGUI GameStartDelayText;
         public TextMeshProUGUI GameOverScoreText;
-        public LaserPointerVrButtonHandler HandLaserPointer;
+        private LaserPointerVrButtonHandler HandLaserPointer;
 
         private void OnEnable()
         {
@@ -33,6 +33,11 @@ namespace UI
             LevelManager.GameStarting -= OnGameStarting;
             LevelManager.GameStarted -= OnGameStarted;
             LevelManager.GameStarterTimeUpdated -= OnGameStarterTimeUpdated;
+        }
+
+        private void Awake()
+        {
+            HandLaserPointer = GameObject.FindWithTag("Pointer").GetComponent<LaserPointerVrButtonHandler>();
         }
 
         private void OnGameStarterTimeUpdated(object sender, TimeUpdatedEventArgs e)
