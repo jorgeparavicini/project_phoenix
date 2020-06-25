@@ -640,8 +640,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: -1
-  HoverMaterial: {fileID: 0}
-  FixedMaterial: {fileID: 0}
+  HoverMaterial: {fileID: 2100000, guid: a3c8f57fc4e46d04f914114b4ed48be4, type: 2}
+  FixedMaterial: {fileID: 2100000, guid: 7e05ef7409d694c74a16dec33c316bd7, type: 2}
   InvalidColor: {r: 1, g: 0, b: 0, a: 1}
   ValidColor: {r: 0, g: 1, b: 0, a: 1}
   Connected: 0
@@ -677,7 +677,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0fb6e691ad75e514783d3d13591ab0ee, type: 2}
+  - {fileID: 2100000, guid: 7e05ef7409d694c74a16dec33c316bd7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
