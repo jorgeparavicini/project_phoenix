@@ -424,11 +424,11 @@ PrefabInstance:
     - target: {fileID: 6013942963122754009, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 931df8a3a30936c439895afa18c82688, type: 2}
     - target: {fileID: 6079245584150018955, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 931df8a3a30936c439895afa18c82688, type: 2}
     - target: {fileID: 7946252782906197560, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: _levelName
       value: Color Level
