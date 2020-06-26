@@ -16,21 +16,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &1093059592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8336593184265450680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf40ccdefd642c547a2104471f499988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: {x: 0, y: 0, z: 0}
-  ShaderSpeed: {x: 0, y: 0}
-  UseLegacyShader: 0
 --- !u!65 &2936364588455716734
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44,6 +29,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.006, y: 0.044999998, z: 0.0016}
   m_Center: {x: 0.000000007450581, y: -2.3283064e-10, z: 0}
+--- !u!114 &1093059592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336593184265450680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf40ccdefd642c547a2104471f499988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: {x: 0, y: 0, z: 0.5}
+  ShaderSpeed: {x: 0, y: 1.95}
+  UseLegacyShader: 0
 --- !u!54 &1454862799
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60,21 +60,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &1454862797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8747664476481361820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf40ccdefd642c547a2104471f499988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: {x: 0, y: 0, z: 0}
-  ShaderSpeed: {x: 0, y: 0}
-  UseLegacyShader: 0
 --- !u!65 &1731918463924823590
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88,6 +73,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.006, z: 0.0016}
   m_Center: {x: -0.000000007450581, y: -0.0000000018626451, z: -9.313226e-10}
+--- !u!114 &1454862797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747664476481361820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf40ccdefd642c547a2104471f499988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: {x: -1, y: 0, z: 0}
+  ShaderSpeed: {x: -3.87, y: 0}
+  UseLegacyShader: 0
 --- !u!54 &1985149352
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -104,21 +104,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &1985149350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751920304426396809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf40ccdefd642c547a2104471f499988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: {x: 0, y: 0, z: 0}
-  ShaderSpeed: {x: 0, y: 0}
-  UseLegacyShader: 0
 --- !u!65 &5388127477662964000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -132,6 +117,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.036, y: 0.0060000014, z: 0.0016000004}
   m_Center: {x: -0.000000007450581, y: -0.0000000018626451, z: -4.656613e-10}
+--- !u!114 &1985149350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751920304426396809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf40ccdefd642c547a2104471f499988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: {x: 1.5, y: 0, z: 0}
+  ShaderSpeed: {x: 6, y: 0}
+  UseLegacyShader: 0
 --- !u!64 &751344182
 MeshCollider:
   m_ObjectHideFlags: 0
