@@ -31,7 +31,7 @@ public class LoadScores : MonoBehaviour
         var scores = HighScoreManager.LevelScores;
         scores.ForEach((score =>
         {
-            Instantiate(ScoresPrefab).transform.SetParent(transform);
+            Instantiate(ScoresPrefab).transform.SetParent(transform, false);
         }));
     }
 }
