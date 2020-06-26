@@ -19,7 +19,6 @@ namespace Utility
 
         private void Play()
         {
-            Debug.Log("Trigger");
             _animator.SetTrigger(Play1);
         }
     }

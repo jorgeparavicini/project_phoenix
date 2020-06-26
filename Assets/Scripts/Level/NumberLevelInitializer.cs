@@ -26,10 +26,10 @@ namespace Level
         private void Start()
         {
             _containers = GameObject.FindGameObjectsWithTag(Container.Tag)
-                .Select((obj, index) => GetComponent<NumberContainer>())
+                .Select(obj => obj.GetComponent<NumberContainer>())
                 .ToList();
             _spawners = GameObject.FindGameObjectsWithTag(PackageSpawner.Tag)
-                .Select((obj, index) => GetComponent<PackageSpawner>())
+                .Select(obj => obj.GetComponent<PackageSpawner>())
                 .ToList();
 
             for (var i = 0; i < NumberOfDistinctPackages; i++)
