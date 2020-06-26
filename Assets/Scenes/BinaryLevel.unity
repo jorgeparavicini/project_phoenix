@@ -332,6 +332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ====ENVIRONMENT====
       objectReference: {fileID: 0}
+    - target: {fileID: 3344665643578431776, guid: cb121fcfa7e891344b3309e0324968b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4234181912396346892, guid: cb121fcfa7e891344b3309e0324968b8, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
