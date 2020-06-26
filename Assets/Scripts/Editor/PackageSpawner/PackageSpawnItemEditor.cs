@@ -4,13 +4,13 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace EditorScripts.Editor.PackageSpawner
+namespace Editor.PackageSpawner
 {
     [CustomPropertyDrawer(typeof(SpawnItem))]
     public class PackageSpawnItemEditor : PropertyDrawer
     {
-        private const string UxmlPath = "Assets/Scripts/EditorScripts/Editor/PackageSpawner/PackageSpawnItemTemplate.uxml";
-        private const string StylesheetPath = "Assets/Scripts/EditorScripts/Editor/PackageSpawner/PackageSpawnItemStyles.uss";
+        private const string UxmlPath = "Assets/Scripts/Editor/PackageSpawner/PackageSpawnItemTemplate.uxml";
+        private const string StylesheetPath = "Assets/Scripts/Editor/PackageSpawner/PackageSpawnItemStyles.uss";
         private readonly VisualTreeAsset _visualTree;
         private readonly StyleSheet _stylesheet;
 
