@@ -511,6 +511,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4977006965592608659, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: Speed.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977006965592608659, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: ShaderSpeed.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977006966119286776, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: Speed.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977006966119286776, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: ShaderSpeed.x
+      value: -3.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977006966380360253, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: Speed.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977006966380360253, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: ShaderSpeed.y
+      value: 1.95
+      objectReference: {fileID: 0}
     - target: {fileID: 6013942963122754009, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
