@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1.134642, g: 1.1474212, b: 1.055411, a: 1}
+  m_AmbientSkyColor: {r: 0.9124953, g: 0.9221513, b: 0.8497311, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -149,6 +149,10 @@ PrefabInstance:
     - target: {fileID: 7946252782906197560, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: _autoStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946252782906197560, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: _levelName
+      value: Binary Level
       objectReference: {fileID: 0}
     - target: {fileID: 7946252784431842537, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: m_Name
@@ -402,3 +406,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0c6f136dcdc5440bd3c4477f0a2240, type: 3}
+--- !u!1 &1943487307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7946252782906197559, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+  m_PrefabInstance: {fileID: 294851731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1943487309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943487307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91eed260bacd1504aa151c23b62331b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangeMax: 255
+  RangeMin: 1
+  PackageBase: 2
+  ContainerBase: 10
+  _numberPackagePrefab: {fileID: 656575016, guid: 7ed8a05e759130140be333e9664f9cfc, type: 3}

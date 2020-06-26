@@ -3,14 +3,14 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace EditorScripts.Editor.PackageSpawner
+namespace Editor.PackageSpawner
 {
     [CustomEditor(typeof(Level.PackageSpawner), true)]
     [CanEditMultipleObjects]
     public class PackageSpawnerEditor : UnityEditor.Editor
     {
-        private const string UxmlPath = "Assets/Scripts/EditorScripts/Editor/PackageSpawner/PackageSpawnerTemplate.uxml";
-        private const string StylesheetPath = "Assets/Scripts/EditorScripts/Editor/PackageSpawner/PackageSpawnerStyles.uss";
+        private const string UxmlPath = "Assets/Scripts/Editor/PackageSpawner/PackageSpawnerTemplate.uxml";
+        private const string StylesheetPath = "Assets/Scripts/Editor/PackageSpawner/PackageSpawnerStyles.uss";
         private VisualElement _rootElement;
         private VisualTreeAsset _visualTree;
 

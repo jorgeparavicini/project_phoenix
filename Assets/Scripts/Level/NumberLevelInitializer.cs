@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Data;
 using Extensions;
 using Level.Containers;
@@ -11,26 +12,33 @@ namespace Level
 {
     public class NumberLevelInitializer : MonoBehaviour
     {
-        public List<NumberContainer> Containers = new List<NumberContainer>();
-        public List<PackageSpawner> Spawners = new List<PackageSpawner>();
+        private List<NumberContainer> _containers = new List<NumberContainer>();
+        private List<PackageSpawner> _spawners = new List<PackageSpawner>();
         public int RangeMax = 255;
         public int RangeMin = 1;
         public NumberBase PackageBase;
         public NumberBase ContainerBase;
         public NumberPackage _numberPackagePrefab;
-        public int NumberOfDistinctPackages => Containers.Count;
+        public int NumberOfDistinctPackages => _containers.Count;
 
         private readonly List<int> _usedNumbers = new List<int>();
 
         private void Start()
         {
+            _containers = GameObject.FindGameObjectsWithTag(Container.Tag)
+                .Select((obj, index) => GetComponent<NumberContainer>())
+                .ToList();
+            _spawners = GameObject.FindGameObjectsWithTag(PackageSpawner.Tag)
+                .Select((obj, index) => GetComponent<PackageSpawner>())
+                .ToList();
+
             for (var i = 0; i < NumberOfDistinctPackages; i++)
             {
                 var number = GetNextUniqueNumber();
-                Containers[i].Value = number;
-                Containers[i].Base = ContainerBase;
-                
-                Spawners.ForEach(p =>
+                _containers[i].Value = number;
+                _containers[i].Base = ContainerBase;
+
+                _spawners.ForEach(p =>
                 {
                     var spawnItem = new SpawnItem(_numberPackagePrefab.gameObject);
                     spawnItem.Spawned += (sender, args) =>

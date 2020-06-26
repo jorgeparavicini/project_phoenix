@@ -11,6 +11,8 @@ namespace Level.Containers
     /// </summary>
     public abstract class Container : MonoBehaviour
     {
+        public const string Tag = "Container";
+        
         /// <summary>
         /// Handles the entering of a package inside a container.
         /// It makes sure only packages are handled and not arbitrary objects.

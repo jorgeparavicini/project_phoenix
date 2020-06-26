@@ -3,13 +3,13 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace EditorScripts.Editor.PackageSpawner
+namespace Editor.PackageSpawner
 {
     [CustomEditor(typeof(RandomTimePackageSpawner))]
     [CanEditMultipleObjects]
     public class RandomTimePackageSpawnerEditor : PackageSpawnerEditor
     {
-        private const string UxmlPath = "Assets/Scripts/EditorScripts/Editor/PackageSpawner/RandomTimePackageSpawnerTemplate.uxml";
+        private const string UxmlPath = "Assets/Scripts/Editor/PackageSpawner/RandomTimePackageSpawnerTemplate.uxml";
         private VisualTreeAsset _randomVisualTree;
 
         protected override void OnEnable()
