@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nlog>
+  <targets>
+    <target name="UnityConsole" type="UnityConsole" />
+  </targets>
+  <rules>
+    <logger name="*" target="UnityConsole" levels="Everything" platforms="Everything" namespace="*" final="true" />
+    <logger name="*" target="UnityConsole" levels="Assert, Fatal, Error" platforms="Everything" namespace="*" final="true" />
+  </rules>
+</nlog>

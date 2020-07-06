@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public static class Initializer
+/// <summary>
+/// Activates the second display before the Splash Screen is displayed.
+/// </summary>
+public static class DisplayInitializer
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
     private static void InitializeDisplays()

@@ -259,6 +259,9 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
+  AndroidMinifyWithR8: 0
+  AndroidMinifyRelease: 0
+  AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 100
   m_BuildTargetIcons: []
@@ -583,7 +586,18 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: AIUNITY_CODE;NLOG_ALL
+    4: AIUNITY_CODE;NLOG_ALL
+    7: AIUNITY_CODE;NLOG_ALL
+    13: AIUNITY_CODE;NLOG_ALL
+    14: AIUNITY_CODE;NLOG_ALL
+    19: AIUNITY_CODE;NLOG_ALL
+    21: AIUNITY_CODE;NLOG_ALL
+    25: AIUNITY_CODE;NLOG_ALL
+    27: AIUNITY_CODE;NLOG_ALL
+    28: AIUNITY_CODE;NLOG_ALL
+    29: AIUNITY_CODE;NLOG_ALL
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 0

@@ -1,0 +1,341 @@
+// 
+// Copyright (c) 2004-2011 Jaroslaw Kowalski <jaak@jkowalski.net>
+// 
+// All rights reserved.
+// 
+// Redistribution and use in source and binary forms, with or without 
+// modification, are permitted provided that the following conditions 
+// are met:
+// 
+// * Redistributions of source code must retain the above copyright notice, 
+//   this list of conditions and the following disclaimer. 
+// 
+// * Redistributions in binary form must reproduce the above copyright notice,
+//   this list of conditions and the following disclaimer in the documentation
+//   and/or other materials provided with the distribution. 
+// 
+// * Neither the name of Jaroslaw Kowalski nor the names of its 
+//   contributors may be used to endorse or promote products derived from this
+//   software without specific prior written permission. 
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF 
+// THE POSSIBILITY OF SUCH DAMAGE.
+// 
+
+#if AIUNITY_CODE
+namespace AiUnity.NLog.Core.LayoutRenderers
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Globalization;
+    using System.Text;
+    using AiUnity.NLog.Core.Common;
+    using AiUnity.NLog.Core.Config;
+    using AiUnity.NLog.Core.Internal;
+    using AiUnity.Common.InternalLog;
+    using UnityEngine.Scripting;
+
+    /// <summary>
+    /// Exception information provided through 
+    /// a call to one of the Logger.*Exception() methods.
+    /// </summary>
+    [LayoutRenderer("exception")]
+    [ThreadAgnostic]
+    [Preserve]
+    public class ExceptionLayoutRenderer : LayoutRenderer
+    {
+        private string format;
+        private string innerFormat = string.Empty;
+        private ExceptionDataTarget[] exceptionDataTargets;
+        private ExceptionDataTarget[] innerExceptionDataTargets;
+
+        // Internal logger singleton
+        private static IInternalLogger Logger { get { return NLogInternalLogger.Instance; } }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExceptionLayoutRenderer" /> class.
+        /// </summary>
+        public ExceptionLayoutRenderer()
+        {
+            this.Format = this.InnerFormat = "Header,Message,Method,Type,Stacktrace,Footer";
+            //this.Separator = " ";
+            this.Separator = Environment.NewLine;
+            this.InnerExceptionSeparator = Environment.NewLine;
+            this.MaxInnerExceptionLevel = 10;
+        }
+
+        private delegate void ExceptionDataTarget(StringBuilder sb, Exception ex);
+
+        /// <summary>
+        /// Gets or sets the format of the output. Must be a comma-separated list of exception
+        /// properties: Message, Type, ShortType, ToString, Method, StackTrace.
+        /// This parameter value is case-insensitive.
+        /// </summary>
+        [DefaultParameter]
+        public string Format
+        {
+            get
+            {
+                return this.format;
+            }
+
+            set
+            {
+                this.format = value;
+                this.exceptionDataTargets = CompileFormat(value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the format of the output of inner exceptions. Must be a comma-separated list of exception
+        /// properties: Message, Type, ShortType, ToString, Method, StackTrace.
+        /// This parameter value is case-insensitive.
+        /// </summary>
+        public string InnerFormat
+        {
+            get
+            {
+                return this.innerFormat;
+            }
+
+            set
+            {
+                this.innerFormat = value;
+                this.innerExceptionDataTargets = CompileFormat(value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the separator used to concatenate parts specified in the Format.
+        /// </summary>
+        [DefaultValue("\n")]
+        public string Separator { get; set; }
+
+        /// <summary>
+        /// Gets or sets the maximum number of inner exceptions to include in the output.
+        /// By default inner exceptions are not enabled for compatibility with NLog 1.0.
+        /// </summary>
+        [DefaultValue(0)]
+        public int MaxInnerExceptionLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the separator between inner exceptions.
+        /// </summary>
+        public string InnerExceptionSeparator { get; set; }
+
+        /// <summary>
+        /// Renders the specified exception information and appends it to the specified <see cref="StringBuilder" />.
+        /// </summary>
+        /// <param name="builder">The <see cref="StringBuilder"/> to append the rendered data to.</param>
+        /// <param name="logEvent">Logging event.</param>
+        protected override void Append(StringBuilder builder, LogEventInfo logEvent)
+        {
+            if (logEvent.Exception != null)
+            {
+                var sb2 = new StringBuilder(128);
+                string separator = string.Empty;
+
+                foreach (ExceptionDataTarget targetRenderFunc in this.exceptionDataTargets)
+                {
+                    targetRenderFunc(sb2, logEvent.Exception);
+                    sb2.Append(separator);
+                    separator = this.Separator;
+                }
+
+                Exception currentException = logEvent.Exception.InnerException;
+                int currentLevel = 0;
+                while (currentException != null && currentLevel < this.MaxInnerExceptionLevel)
+                {
+                    // separate inner exceptions
+                    //sb2.Append(this.InnerExceptionSeparator);
+
+                    separator = string.Empty;
+                    foreach (ExceptionDataTarget targetRenderFunc in this.innerExceptionDataTargets ?? this.exceptionDataTargets)
+                    {
+                        targetRenderFunc(sb2, currentException);
+                        sb2.Append(separator);
+                        separator = this.Separator;
+                    }
+
+                    currentException = currentException.InnerException;
+                    currentLevel++;
+                }
+
+                builder.Append(sb2.ToString());
+            }
+        }
+
+        private ExceptionDataTarget[] CompileFormat(string formatSpecifier)
+        {
+            string[] parts = formatSpecifier.Replace(" ", string.Empty).Split(',');
+            var dataTargets = new List<ExceptionDataTarget>();
+
+            foreach (string s in parts) {
+                switch (s.ToUpper(CultureInfo.InvariantCulture)) {
+                    case "HEADER":
+                        dataTargets.Add(AppendHeader);
+                        break;
+
+                    case "MESSAGE":
+                        dataTargets.Add(AppendMessage);
+                        break;
+
+                    case "TYPE":
+                        dataTargets.Add(AppendType);
+                        break;
+
+                    case "SHORTTYPE":
+                        dataTargets.Add(AppendShortType);
+                        break;
+
+                    case "TOSTRING":
+                        dataTargets.Add(AppendToString);
+                        break;
+
+                    case "METHOD":
+                        dataTargets.Add(AppendMethod);
+                        break;
+
+                    case "STACKTRACE":
+                        dataTargets.Add(AppendStackTrace);
+                        break;
+
+                    case "DATA":
+                        dataTargets.Add(AppendData);
+                        break;
+
+                    case "FOOTER":
+                        dataTargets.Add(AppendFooter);
+                        break;
+
+                    default:
+                        Logger.Warn("Unknown exception data target: {0}", s);
+                        break;
+                }
+            }
+
+            return dataTargets.ToArray();
+        }
+
+        private void AppendHeader(StringBuilder sb, Exception ex)
+        {
+            string exceptionHeader = string.Format("Exception: {0}{1}", ex.GetType().FullName, Environment.NewLine);
+            string exceptionDelimeter = new String('*', exceptionHeader.Length);
+            sb.Append(Environment.NewLine + exceptionDelimeter + Environment.NewLine);
+            sb.Append(exceptionHeader);
+            sb.Append(exceptionDelimeter + Environment.NewLine);
+        }
+
+        private void AppendFooter(StringBuilder sb, Exception ex)
+        {
+            string exceptionHeader = string.Format("Exception: {0}{1}", ex.GetType().FullName, Environment.NewLine);
+            string exceptionDelimeter = new String('*', exceptionHeader.Length);
+            sb.Append(exceptionDelimeter);
+        }
+
+        /// <summary>
+        /// Appends the Message of an Exception to the specified <see cref="StringBuilder" />.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to append the rendered data to.</param>
+        /// <param name="ex">The exception containing the Message to append.</param>
+        protected virtual void AppendMessage(StringBuilder sb, Exception ex)
+        {
+            try
+            {
+                sb.AppendFormat("{0,-11} {1}", "Message:", ex.Message);
+            }
+            catch (Exception exception)
+            {
+                var message = string.Format("Exception in {0}.AppendMessage(): {1}.", typeof(ExceptionLayoutRenderer).FullName, exception.GetType().FullName);
+                sb.Append("NLog message:" + message);
+
+                if (Logger.IsWarnEnabled)
+                {
+                    Logger.Warn(message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Appends the method name from Exception's stack trace to the specified <see cref="StringBuilder" />.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to append the rendered data to.</param>
+        /// <param name="ex">The Exception whose method name should be appended.</param>
+        protected virtual void AppendMethod(StringBuilder sb, Exception ex)
+        {
+            if (ex.TargetSite != null)
+            {
+                sb.AppendFormat("{0,-12} {1}", "Method:", ex.TargetSite.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Appends the stack trace from an Exception to the specified <see cref="StringBuilder" />.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to append the rendered data to.</param>
+        /// <param name="ex">The Exception whose stack trace should be appended.</param>
+        protected virtual void AppendStackTrace(StringBuilder sb, Exception ex)
+        {
+            sb.AppendFormat("{1}Stack Trace:{1}{0}", ex.StackTrace, Environment.NewLine);
+        }
+
+        /// <summary>
+        /// Appends the result of calling ToString() on an Exception to the specified <see cref="StringBuilder" />.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to append the rendered data to.</param>
+        /// <param name="ex">The Exception whose call to ToString() should be appended.</param>
+        protected virtual void AppendToString(StringBuilder sb, Exception ex)
+        {
+            sb.Append(ex.ToString());
+        }
+
+        /// <summary>
+        /// Appends the type of an Exception to the specified <see cref="StringBuilder" />.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to append the rendered data to.</param>
+        /// <param name="ex">The Exception whose type should be appended.</param>
+        protected virtual void AppendType(StringBuilder sb, Exception ex)
+        {
+            sb.AppendFormat("{0,-13} {1}", "Type:", ex.GetType().FullName);
+        }
+
+        /// <summary>
+        /// Appends the short type of an Exception to the specified <see cref="StringBuilder" />.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to append the rendered data to.</param>
+        /// <param name="ex">The Exception whose short type should be appended.</param>
+        protected virtual void AppendShortType(StringBuilder sb, Exception ex)
+        {
+            sb.Append(ex.GetType().Name);
+        }
+
+        /// <summary>
+        /// Appends the contents of an Exception's Data property to the specified <see cref="StringBuilder" />.
+        /// </summary>
+        /// <param name="sb">The <see cref="StringBuilder"/> to append the rendered data to.</param>
+        /// <param name="ex">The Exception whose Data property elements should be appended.</param>
+        protected virtual void AppendData(StringBuilder sb, Exception ex)
+        {
+            string separator = string.Empty;
+            foreach (var key in ex.Data.Keys)
+            {
+                sb.Append(separator);
+                sb.AppendFormat("{0}: {1}", key, ex.Data[key]);
+                separator = ";";
+            }
+        }
+
+
+    }
+}
+#endif
