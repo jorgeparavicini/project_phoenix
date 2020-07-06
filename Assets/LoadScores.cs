@@ -28,10 +28,20 @@ public class LoadScores : MonoBehaviour
 
     private void LoadScorePrefabs()
     {
-        var scores = HighScoreManager.LevelScores;
-        scores.ForEach((score =>
+        var levelScores = HighScoreManager.LevelScores;
+        levelScores.ForEach((levelScore =>
         {
-            Instantiate(ScoresPrefab).transform.SetParent(transform, false);
+            var prefab = Instantiate(ScoresPrefab);
+            var script = prefab.GetComponent<WriteScores>();
+            script.WriteTitle(levelScore.LevelName);
+
+            var userScores = levelScore.Scores;
+            userScores.ForEach((userScore =>
+            {
+                script.WriteScoresScrollable(userScore.UserName, userScore.Score);
+            }));
+            
+            prefab.transform.SetParent(transform, false);
         }));
     }
 }
