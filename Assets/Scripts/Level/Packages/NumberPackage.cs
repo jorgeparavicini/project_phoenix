@@ -52,8 +52,7 @@ namespace Level.Packages
             }
         }
 
-        public List<TextMeshProUGUI> DisplayTexts =>
-            _displayTexts ?? (_displayTexts = GetComponentsInChildren<TextMeshProUGUI>().ToList());
+        public List<TextMeshProUGUI> DisplayTexts => _displayTexts = GetComponentsInChildren<TextMeshProUGUI>().ToList();
 
         private void OnEnable()
         {
