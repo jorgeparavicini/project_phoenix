@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 744363918}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.07665865, g: 0.21222225, b: 0.4942201, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: a69d43f76ede10d4f9768a434ca2d2bc, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 45ccf3b81c5f98b40a89b84d41509201, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1833,6 +1833,10 @@ PrefabInstance:
     - target: {fileID: 964048984203795149, guid: 4862f2673fe32d740adaba20714e472b, type: 3}
       propertyPath: m_Name
       value: ScorePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1329123567481512563, guid: 4862f2673fe32d740adaba20714e472b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00001193548
       objectReference: {fileID: 0}
     - target: {fileID: 3444141171088119453, guid: 4862f2673fe32d740adaba20714e472b, type: 3}
       propertyPath: m_LocalPosition.x
