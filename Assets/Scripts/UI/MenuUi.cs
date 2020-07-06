@@ -25,6 +25,12 @@ public class MenuUi : MonoBehaviour
         MenuObject.SetActive(false);
         ScoreObject.SetActive(true);
     }
+    public void ShowMenu()
+    {
+        MenuObject.SetActive(true);
+        ScoreObject.SetActive(false);
+    }
+    
 
     public void Quit()
     {

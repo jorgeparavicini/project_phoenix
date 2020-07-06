@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -14,13 +15,14 @@ public class WriteScores : MonoBehaviour
         TitleText.text = title;
     }
 
-    public void WriteScoresScrollable(string userName, int userScore)
+    public void WriteScoresScrollable(List<string> userNames, List<int> userScores)
     {
+        if (userNames.Count != userScores.Count) return;
         TextMeshProUGUI contentText = Content.GetComponent<TextMeshProUGUI>();
-        contentText.text += "<align=left>" + userName + ":<line-height=0>\n";
-        contentText.text += "<align=right>" + userScore + "<line-height=1em>\n";
-        
-            /*"<align=left>This is the left aligned text<line-height=0>";
-            "<align=right>5,000<line-height=1em>";*/
+        for (int i = 0; i < userNames.Count; i++)
+        {
+            contentText.text += "<align=left>" + userNames[i] + ":<line-height=0>\n";
+            contentText.text += "<align=right>" + userScores[i] + "<line-height=1em>\n";
+        }
     }
 }
