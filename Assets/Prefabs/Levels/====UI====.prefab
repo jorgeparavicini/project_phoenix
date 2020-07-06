@@ -33,7 +33,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1968,7 +1968,7 @@ GameObject:
   - component: {fileID: 2851479774127568631}
   - component: {fileID: 254123492552959318}
   m_Layer: 5
-  m_Name: Score Text
+  m_Name: Game Over Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2244,7 +2244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &535125438708746112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2345,7 +2345,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3185455977423391276}
   m_HandleRect: {fileID: 2033428811014807862}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2504,7 +2504,8 @@ MonoBehaviour:
   GameStartContent: {fileID: 5487803192036329050}
   GameStartButton: {fileID: 5487803190912080655}
   GameStartDelayText: {fileID: 5487803190847837967}
-  GameOverScoreText: {fileID: 4918673635549190374}
+  GameOverText: {fileID: 4918673635549190374}
+  GameOverScoreText: {fileID: 254123492552959318}
 --- !u!1 &5487803190301717255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4076,7 +4077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000008591561}
+  m_AnchoredPosition: {x: 0, y: -0.000054598728}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &590805922949682120

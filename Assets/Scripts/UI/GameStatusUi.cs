@@ -16,6 +16,7 @@ namespace UI
         public GameObject GameStartContent;
         public GameObject GameStartButton;
         public TextMeshProUGUI GameStartDelayText;
+        public TextMeshProUGUI GameOverText;
         public TextMeshProUGUI GameOverScoreText;
         private LaserPointerVrButtonHandler HandLaserPointer;
 
@@ -60,6 +61,7 @@ namespace UI
         private void OnGameOver(object sender, System.EventArgs e)
         {
             GameOverContent.SetActive(true);
+            GameOverText.text = "GAME OVER";
             GameOverScoreText.text = $"Your Score: {ScoreManager.Score}";
         }
 
