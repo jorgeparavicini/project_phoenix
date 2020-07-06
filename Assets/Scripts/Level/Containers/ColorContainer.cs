@@ -14,7 +14,7 @@ namespace Level.Containers
         {
             if (!(e.Package is ColorPackage package))
             {
-                Debug.Log($"Got unrecognized package in color container: {e.Package}");
+                Debug.LogWarning($"Got unrecognized package in color container: {e.Package}");
                 return;
             }
 
