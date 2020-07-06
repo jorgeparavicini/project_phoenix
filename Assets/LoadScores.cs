@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Score;
+using UnityEditor;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
@@ -22,7 +23,10 @@ public class LoadScores : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            Destroy(child.gameObject);
+            if (child.CompareTag("ScorePrefab"))
+            {
+                Destroy(child.gameObject);
+            }
         }
     }
 
@@ -36,12 +40,18 @@ public class LoadScores : MonoBehaviour
             script.WriteTitle(levelScore.LevelName);
 
             var userScores = levelScore.Scores;
+            List<string> userNames = new List<string>();
+            List<int> userScoresInt = new List<int>();
             userScores.ForEach((userScore =>
             {
-                script.WriteScoresScrollable(userScore.UserName, userScore.Score);
+                userNames.Add(userScore.UserName);
+                userScoresInt.Add(userScore.Score);
             }));
+
+            script.WriteScoresScrollable(userNames, userScoresInt);
             
             prefab.transform.SetParent(transform, false);
+            prefab.transform.SetSiblingIndex(0);
         }));
     }
 }
