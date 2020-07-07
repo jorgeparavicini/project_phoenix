@@ -1,36 +1,6 @@
 fileFormatVersion: 2
 guid: 9c89154ec945a5a4fa3cd4b9de0b07da
-labels:
-- 2017
-- AI
-- API
-- AiUnity
-- C#
-- Console
-- CreateLogger
-- CustomLogger
-- Debug
-- DebugAndroid
-- DebugConsole
-- DebugRuntime
-- Debugging
-- DebugiOS
-- Editor
-- InGameLogging
-- Log
-- Logger
-- Logging
-- LoggingFramework
-- LoggingToFile
-- MobileDebug
-- MobileLogging
-- RemoteDebug
-- RemoteLogging
-- Runtime
-- Script
 folderAsset: yes
-timeCreated: 1504189327
-licenseType: Store
 DefaultImporter:
   externalObjects: {}
   userData: 
