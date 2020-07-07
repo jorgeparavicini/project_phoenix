@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Level.Path
+﻿namespace Phoenix.Level.Path
 {
     public struct GridPoint
     {

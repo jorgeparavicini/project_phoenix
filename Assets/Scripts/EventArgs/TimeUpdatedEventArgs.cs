@@ -1,4 +1,4 @@
-﻿namespace EventArgs
+﻿namespace Phoenix.EventArgs
 {
     public class TimeUpdatedEventArgs
     {

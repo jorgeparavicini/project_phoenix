@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Level
+namespace Phoenix.Level
 {
     public class RandomTimePackageSpawner: PackageSpawner
     {

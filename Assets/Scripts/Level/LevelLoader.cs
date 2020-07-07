@@ -1,38 +1,40 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelLoader : MonoBehaviour
+namespace Phoenix.Level
 {
-    private static readonly int Start = Animator.StringToHash("Start");
-    public Animator Transition;
-    public float TransitionTime;
-    private static LevelLoader _instance;
-
-    private void Awake()
+    public class LevelLoader : MonoBehaviour
     {
-        if (_instance is null)
+        private static readonly int Start = Animator.StringToHash("Start");
+        public Animator Transition;
+        public float TransitionTime;
+        private static LevelLoader _instance;
+
+        private void Awake()
         {
-            _instance = this;
+            if (_instance is null)
+            {
+                _instance = this;
+            }
+            else
+            {
+                Destroy(this);
+                Debug.LogError("Multiple Level Loaders found. This is not supported");
+            }
         }
-        else
+
+        public static void LoadLevel(string levelName)
         {
-            Destroy(this);
-            Debug.LogError("Multiple Level Loaders found. This is not supported");
+            _instance.StartCoroutine(LoadLevelInternal(levelName));
         }
-    }
 
-    public static void LoadLevel(string levelName)
-    {
-        _instance.StartCoroutine(LoadLevelInternal(levelName));
-    }
+        private static IEnumerator LoadLevelInternal(string levelName)
+        {
+            _instance.Transition.SetTrigger(Start);
+            yield return new WaitForSeconds(_instance.TransitionTime);
 
-    private static IEnumerator LoadLevelInternal(string levelName)
-    {
-        _instance.Transition.SetTrigger(Start);
-        yield return new WaitForSeconds(_instance.TransitionTime);
-
-        SceneManager.LoadScene(levelName);
+            SceneManager.LoadScene(levelName);
+        }
     }
 }

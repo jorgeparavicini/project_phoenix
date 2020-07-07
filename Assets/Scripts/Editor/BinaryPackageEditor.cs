@@ -1,9 +1,9 @@
 ﻿using Data;
-using Level.Containers;
-using Level.Packages;
+using Phoenix.Data;
+using Phoenix.Level.Packages;
 using UnityEditor;
 
-namespace EditorScripts.Editor
+namespace Phoenix.Editor
 {
     [CustomEditor(typeof(NumberPackage))]
     [CanEditMultipleObjects]

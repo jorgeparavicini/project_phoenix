@@ -1,9 +1,9 @@
-﻿using Level;
+﻿using Phoenix.Level;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Editor.PackageSpawner
+namespace Phoenix.Editor.PackageSpawner
 {
     [CustomEditor(typeof(RandomTimePackageSpawner))]
     [CanEditMultipleObjects]

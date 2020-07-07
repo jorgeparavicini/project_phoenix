@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections;
-using EventArgs;
-using Level;
-using Score;
+﻿using Phoenix.EventArgs;
+using Phoenix.Level;
+using Phoenix.Score;
+using Phoenix.VR;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using VR;
 
-namespace UI
+namespace Phoenix.UI
 {
     public class GameStatusUi : MonoBehaviour
     {
@@ -16,6 +13,7 @@ namespace UI
         public GameObject GameStartContent;
         public GameObject GameStartButton;
         public TextMeshProUGUI GameStartDelayText;
+        public TextMeshProUGUI GameOverText;
         public TextMeshProUGUI GameOverScoreText;
         private LaserPointerVrButtonHandler HandLaserPointer;
 
@@ -60,6 +58,7 @@ namespace UI
         private void OnGameOver(object sender, System.EventArgs e)
         {
             GameOverContent.SetActive(true);
+            GameOverText.text = "GAME OVER";
             GameOverScoreText.text = $"Your Score: {ScoreManager.Score}";
         }
 

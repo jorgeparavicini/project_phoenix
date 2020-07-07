@@ -1,9 +1,9 @@
 ﻿using System;
-using EventArgs;
-using Level;
+using Phoenix.EventArgs;
+using Phoenix.Level;
 using UnityEngine;
 
-namespace Score
+namespace Phoenix.Score
 {
     public class ScoreManager : MonoBehaviour
     {

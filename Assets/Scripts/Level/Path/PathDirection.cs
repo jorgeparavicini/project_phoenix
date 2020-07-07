@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Valve.VR.InteractionSystem;
 
-namespace Level.Path
+namespace Phoenix.Level.Path
 {
     [Flags]
     public enum PathDirection : short

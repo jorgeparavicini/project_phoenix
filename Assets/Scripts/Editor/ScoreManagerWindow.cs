@@ -1,16 +1,16 @@
 ﻿using System.Linq;
-using Level;
-using Score;
+using Phoenix.Level;
+using Phoenix.Score;
 using UnityEditor;
 using UnityEngine;
 
-namespace EditorScripts.Editor
+namespace Phoenix.Editor
 {
     public class ScoreManagerWindow : EditorWindow
     {
         private const string LevelPrefabsLocation = "Prefabs/Levels";
 
-        [MenuItem("SwissSkillsVR/Score Manager")]
+        [MenuItem("Phoenix/Score Manager")]
         private static void Init()
         {
             var window = GetWindow<ScoreManagerWindow>();

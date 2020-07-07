@@ -3,9 +3,9 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Editor.PackageSpawner
+namespace Phoenix.Editor.PackageSpawner
 {
-    [CustomEditor(typeof(Level.PackageSpawner), true)]
+    [CustomEditor(typeof(Phoenix.Level.PackageSpawner), true)]
     [CanEditMultipleObjects]
     public class PackageSpawnerEditor : UnityEditor.Editor
     {

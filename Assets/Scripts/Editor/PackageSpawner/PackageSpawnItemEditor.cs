@@ -1,10 +1,10 @@
-﻿using Level;
+﻿using Phoenix.Level;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Editor.PackageSpawner
+namespace Phoenix.Editor.PackageSpawner
 {
     [CustomPropertyDrawer(typeof(SpawnItem))]
     public class PackageSpawnItemEditor : PropertyDrawer

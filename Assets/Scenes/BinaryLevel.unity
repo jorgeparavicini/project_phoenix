@@ -545,7 +545,7 @@ MonoBehaviour:
   RangeMin: 1
   PackageBase: 2
   ContainerBase: 10
-  _numberPackagePrefab: {fileID: 5158540630908601484, guid: 7c0e5ef52bbd7e449826148404f7d4f3, type: 3}
+  _numberPackagePrefab: {fileID: -6691943796008921245, guid: 7c0e5ef52bbd7e449826148404f7d4f3, type: 3}
 --- !u!4 &2146756089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3773565083976150424, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}

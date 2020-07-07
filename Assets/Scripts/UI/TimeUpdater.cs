@@ -1,23 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using EventArgs;
-using Level;
+﻿using Phoenix.EventArgs;
+using Phoenix.Level;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
-public class TimeUpdater : MonoBehaviour
+namespace Phoenix.UI
 {
-    private TextMeshProUGUI TimeText;
-    void Start()
+    [RequireComponent(typeof(TextMeshProUGUI))]
+    public class TimeUpdater : MonoBehaviour
     {
-        TimeText = GetComponent<TextMeshProUGUI>();
-        LevelManager.TimeUpdated += OnTimeUpdated;
-        TimeText.text = $"{LevelManager.GameDuration:F1}";
-    }
+        private TextMeshProUGUI TimeText;
+        void Start()
+        {
+            TimeText = GetComponent<TextMeshProUGUI>();
+            LevelManager.TimeUpdated += OnTimeUpdated;
+            TimeText.text = $"{LevelManager.GameDuration:F1}";
+        }
     
-    private void OnTimeUpdated(object sender, TimeUpdatedEventArgs e)
-    {
-        TimeText.text = $"{e.TotalTime - e.Time:F1}";
+        private void OnTimeUpdated(object sender, TimeUpdatedEventArgs e)
+        {
+            TimeText.text = $"{e.TotalTime - e.Time:F1}";
+        }
     }
 }

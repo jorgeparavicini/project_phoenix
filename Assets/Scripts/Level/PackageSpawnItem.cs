@@ -1,8 +1,8 @@
 ﻿using System;
-using EventArgs;
+using Phoenix.EventArgs;
 using UnityEngine;
 
-namespace Level
+namespace Phoenix.Level
 {
     [Serializable]
     public class SpawnItem

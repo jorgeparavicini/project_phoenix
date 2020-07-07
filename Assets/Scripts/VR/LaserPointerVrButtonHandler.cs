@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using Valve.VR.Extras;
 
-namespace VR
+namespace Phoenix.VR
 {
     [RequireComponent(typeof(SteamVR_LaserPointer))]
     public class LaserPointerVrButtonHandler : MonoBehaviour
