@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Level;
-using Score;
+using Phoenix.Level;
+using Phoenix.Score;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-namespace UI
+namespace Phoenix.UI
 {
     public class HighScoreListUi : MonoBehaviour
     {

@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Level.Packages
+namespace Phoenix.Level.Packages
 {
     public class ColorPackage : Package
     {

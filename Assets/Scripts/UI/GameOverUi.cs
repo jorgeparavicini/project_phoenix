@@ -1,9 +1,8 @@
-﻿using Level;
-using Score;
+﻿using Phoenix.Score;
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace Phoenix.UI
 {
     public class GameOverUi : MonoBehaviour
     {

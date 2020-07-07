@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Score
+﻿namespace Phoenix.Score
 {
     public struct UserScore
     {

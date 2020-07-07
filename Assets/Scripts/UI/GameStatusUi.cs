@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections;
-using EventArgs;
-using Level;
-using Score;
+﻿using Phoenix.EventArgs;
+using Phoenix.Level;
+using Phoenix.Score;
+using Phoenix.VR;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using VR;
 
-namespace UI
+namespace Phoenix.UI
 {
     public class GameStatusUi : MonoBehaviour
     {

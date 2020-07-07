@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
-using EventArgs;
-using Level.Packages;
-using Score;
+using Phoenix.EventArgs;
+using Phoenix.Level.Packages;
+using Phoenix.Score;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 [assembly: InternalsVisibleTo("Assembly-CSharp-Editor")]
 
-namespace Level
+namespace Phoenix.Level
 {
     [RequireComponent(typeof(ScoreManager))]
     public class LevelManager : MonoBehaviour

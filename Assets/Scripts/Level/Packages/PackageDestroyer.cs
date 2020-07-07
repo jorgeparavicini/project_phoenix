@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using EventArgs;
-using Level.Packages;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Level.Packages
+namespace Phoenix.Level.Packages
 {
     public class PackageDestroyer : MonoBehaviour
     {

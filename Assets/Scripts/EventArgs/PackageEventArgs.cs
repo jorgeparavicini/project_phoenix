@@ -1,6 +1,6 @@
-﻿using Level.Packages;
+﻿using Phoenix.Level.Packages;
 
-namespace EventArgs
+namespace Phoenix.EventArgs
 {
     public class PackageEventArgs
     {

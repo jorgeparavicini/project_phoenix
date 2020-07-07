@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Score
+namespace Phoenix.Score
 {
     public class LevelScore
     {

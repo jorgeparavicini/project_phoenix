@@ -1,8 +1,7 @@
 ﻿using System;
-using Data;
-using UnityEngine.Assertions;
+using Phoenix.Data;
 
-namespace Extensions
+namespace Phoenix.Extensions
 {
     public static class NumberConverter
     {
