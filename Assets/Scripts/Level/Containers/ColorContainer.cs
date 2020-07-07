@@ -1,10 +1,10 @@
-﻿using EventArgs;
-using Level.Packages;
-using Score;
+﻿using Phoenix.EventArgs;
+using Phoenix.Level.Packages;
+using Phoenix.Score;
 using TMPro;
 using UnityEngine;
 
-namespace Level.Containers
+namespace Phoenix.Level.Containers
 {
     public class ColorContainer : Container
     {

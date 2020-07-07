@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Level
+namespace Phoenix.Level
 {
     public class ConveyorBelt : MonoBehaviour
     {

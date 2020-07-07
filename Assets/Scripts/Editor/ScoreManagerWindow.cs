@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using Level;
-using Score;
+using Phoenix.Level;
+using Phoenix.Score;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor
+namespace Phoenix.Editor
 {
     public class ScoreManagerWindow : EditorWindow
     {

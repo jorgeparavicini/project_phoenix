@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using UnityEngine;
 using Valve.Newtonsoft.Json;
 
-namespace Score
+namespace Phoenix.Score
 {
     public static class HighScoreManager
     {

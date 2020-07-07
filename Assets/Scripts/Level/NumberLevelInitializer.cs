@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Data;
-using Extensions;
-using Level.Containers;
-using Level.Packages;
+using Phoenix.Data;
+using Phoenix.Level.Containers;
+using Phoenix.Level.Packages;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Level
+namespace Phoenix.Level
 {
     public class NumberLevelInitializer : MonoBehaviour
     {

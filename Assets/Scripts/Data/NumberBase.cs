@@ -1,4 +1,4 @@
-﻿namespace Data
+﻿namespace Phoenix.Data
 {
     public enum NumberBase
     {

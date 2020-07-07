@@ -1,7 +1,0 @@
-<linker>
-    <assembly fullname="NLog">
-        <type fullname="AiUnity.NLog.Core.Targets*" preserve="all" />
-        <type fullname="AiUnity.NLog.Core.LayoutRenderers*" preserve="all" />
-        <type fullname="AiUnity.NLog.Core.Filters" preserve="all" />
-    </assembly>
-</linker>

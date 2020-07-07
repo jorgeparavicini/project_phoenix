@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Utility
+namespace Phoenix.Utility
 {
     public class Pause : MonoBehaviour
     {

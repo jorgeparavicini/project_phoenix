@@ -1,9 +1,9 @@
 ﻿using System;
-using EventArgs;
-using Level.Packages;
+using Phoenix.EventArgs;
+using Phoenix.Level.Packages;
 using UnityEngine;
 
-namespace Level.Containers
+namespace Phoenix.Level.Containers
 {
     /// <summary>
     /// An abstract class for all containers in the project.

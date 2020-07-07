@@ -1,4 +1,4 @@
-﻿namespace Interfaces
+﻿namespace Phoenix.Interfaces
 {
     public interface IDestroyable
     {

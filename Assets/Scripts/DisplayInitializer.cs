@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Activates the second display before the Splash Screen is displayed.
-/// </summary>
-public static class DisplayInitializer
+namespace Phoenix
 {
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
-    private static void InitializeDisplays()
+    /// <summary>
+    /// Activates the second display before the Splash Screen is displayed.
+    /// </summary>
+    public static class DisplayInitializer
     {
-        if (Display.displays.Length < 2)
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
+        private static void InitializeDisplays()
         {
-            Debug.LogError("Could not initialize second display");
-            return;
-        }
+            if (Display.displays.Length < 2)
+            {
+                Debug.LogError("Could not initialize second display");
+                return;
+            }
 
-        var display = Display.displays[1];
-        display.Activate();
+            var display = Display.displays[1];
+            display.Activate();
+        }
     }
 }

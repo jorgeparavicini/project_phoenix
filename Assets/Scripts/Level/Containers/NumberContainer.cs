@@ -1,13 +1,13 @@
-﻿using Data;
-using EventArgs;
-using Extensions;
-using Level.Packages;
-using Score;
+﻿using Phoenix.Data;
+using Phoenix.EventArgs;
+using Phoenix.Level.Packages;
+using Phoenix.Score;
+using Phoenix.Extensions;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 
-namespace Level.Containers
+namespace Phoenix.Level.Containers
 {
     /// <summary>
     /// A container for handling Number Packages.

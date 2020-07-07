@@ -1,7 +1,7 @@
-﻿using Level.Path;
+﻿using Phoenix.Level.Path;
 using UnityEngine;
 
-namespace Level.Packages
+namespace Phoenix.Level.Packages
 {
     public class PathPackage : Package
     {
