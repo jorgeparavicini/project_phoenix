@@ -546,8 +546,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7946252782906197560, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: _gameDuration
-      value: 90
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7946252782906197560, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: d0d8d0a47bcbf78469b38dd37e493800, type: 2}
     - target: {fileID: 7946252783004859065, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: SpawnItems.Array.size
       value: 4

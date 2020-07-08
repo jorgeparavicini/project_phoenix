@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: _gameDuration
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7946252782906197560, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 36aec101c68bbe947902d0c3e235858f, type: 2}
     - target: {fileID: 7946252784431842537, guid: 45f8f29ba217bcd4ea2bfe58caee2fdc, type: 3}
       propertyPath: m_Name
       value: ====LEVEL====
