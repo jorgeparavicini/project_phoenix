@@ -9,6 +9,7 @@ TagManager:
   - Pointer
   - Package
   - Container
+  - ScorePrefab
   layers:
   - Default
   - TransparentFX
