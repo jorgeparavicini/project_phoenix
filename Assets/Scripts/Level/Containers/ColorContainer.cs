@@ -1,10 +1,10 @@
-﻿using EventArgs;
-using Level.Packages;
-using Score;
+﻿using Phoenix.EventArgs;
+using Phoenix.Level.Packages;
+using Phoenix.Score;
 using TMPro;
 using UnityEngine;
 
-namespace Level.Containers
+namespace Phoenix.Level.Containers
 {
     public class ColorContainer : Container
     {
@@ -14,7 +14,7 @@ namespace Level.Containers
         {
             if (!(e.Package is ColorPackage package))
             {
-                Debug.Log($"Got unrecognized package in color container: {e.Package}");
+                Debug.LogWarning($"Got unrecognized package in color container: {e.Package}");
                 return;
             }
 

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
-using EventArgs;
-using Interfaces;
+using Phoenix.EventArgs;
+using Phoenix.Interfaces;
 using UnityEngine;
 
-namespace Level.Packages
+namespace Phoenix.Level.Packages
 {
     [Serializable]
     public abstract class Package : MonoBehaviour, IDestroyable

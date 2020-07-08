@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Utility
+namespace Phoenix.Utility
 {
     [RequireComponent(typeof(Animator))]
     public class AnimationDelay : MonoBehaviour

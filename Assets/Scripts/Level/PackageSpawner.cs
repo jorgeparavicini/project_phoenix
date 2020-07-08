@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using EventArgs;
-using Level.Packages;
+using Phoenix.EventArgs;
+using Phoenix.Level.Packages;
 using UnityEngine;
 using Random = System.Random;
 
-namespace Level
+namespace Phoenix.Level
 {
     public abstract class PackageSpawner : MonoBehaviour
     {

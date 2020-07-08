@@ -1,46 +1,42 @@
-﻿using System;
-using System.Collections;
-using EventArgs;
-using Level;
-using Score;
-using TMPro;
+﻿using Phoenix.Level;
+using Phoenix.VR;
 using UnityEngine;
-using UnityEngine.UI;
-using VR;
 
-namespace UI
+namespace Phoenix.UI
 {
     public class GameStatusUi : MonoBehaviour
     {
-        public GameObject GameOverContent;
+        public GameObject GameStartContent;
+        public GameObject GameStartButton;
         private LaserPointerVrButtonHandler HandLaserPointer;
 
         private void OnEnable()
         {
-            LevelManager.GameOver += OnGameOver;
             LevelManager.GameStarting += OnGameStarting;
+            LevelManager.GameStarted += OnGameStarted;
         }
 
         private void OnDisable()
         {
-            LevelManager.GameOver -= OnGameOver;
             LevelManager.GameStarting -= OnGameStarting;
+            LevelManager.GameStarted -= OnGameStarted;
         }
 
         private void Awake()
         {
             HandLaserPointer = GameObject.FindWithTag("Pointer").GetComponent<LaserPointerVrButtonHandler>();
         }
+        
 
+        private void OnGameStarted(object sender, System.EventArgs e)
+        {
+            GameStartContent.SetActive(false);
+        }
 
         private void OnGameStarting(object sender, System.EventArgs e)
         {
             HandLaserPointer.DisablePointer();
-        }
-
-        private void OnGameOver(object sender, System.EventArgs e)
-        {
-            GameOverContent.SetActive(true);
+            GameStartButton.SetActive(false);
         }
 
         public void StartGame_Button()

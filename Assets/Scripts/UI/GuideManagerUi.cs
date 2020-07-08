@@ -1,7 +1,7 @@
-﻿using Level;
+﻿using Phoenix.Level;
 using UnityEngine;
 
-namespace UI
+namespace Phoenix.UI
 {
     public class GuideManagerUi : MonoBehaviour
     {

@@ -1,49 +1,25 @@
-﻿using EventArgs;
-using Level;
-using Score;
+﻿using Phoenix.EventArgs;
+using Phoenix.Score;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace UI
+namespace Phoenix.UI
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class ScoreUpdater : MonoBehaviour
     {
-        private TextMeshProUGUI _scoreText;
-        private Image _icon;
+        public TextMeshProUGUI ScoreText;
 
-        private void Awake()
+        void Start()
         {
-            _scoreText = GetComponent<TextMeshProUGUI>();
-            _icon = transform.GetChild(0).GetComponent<Image>();
-
-            _scoreText.enabled = true;
-            _icon.enabled = true;
-            _scoreText.text = "0";
-        }
-
-        private void OnEnable()
-        {
+            ScoreText = GetComponent<TextMeshProUGUI>();
             ScoreManager.ScoreUpdated += OnScoreUpdated;
-            LevelManager.GameOver += LevelManagerOnGameOver;
-        }
-
-        private void OnDisable()
-        {
-            ScoreManager.ScoreUpdated -= OnScoreUpdated;
-            LevelManager.GameOver -= LevelManagerOnGameOver;
-        }
-
-        private void LevelManagerOnGameOver(object sender, System.EventArgs e)
-        {
-            _scoreText.enabled = false;
-            _icon.enabled = false;
+            ScoreText.text = "0";
         }
 
         private void OnScoreUpdated(object sender, ScoreUpdatedEventArgs e)
         {
-            _scoreText.text = $"{e.NewScore}";
+            ScoreText.text = $"{e.NewScore}";
         }
     }
 }

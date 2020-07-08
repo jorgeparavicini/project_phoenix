@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Extensions
+namespace Phoenix.Extensions
 {
     public static class MathExtensions
     {

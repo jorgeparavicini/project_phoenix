@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Level.Path
+namespace Phoenix.Level.Path
 {
     public class PathElement : MonoBehaviour
     {

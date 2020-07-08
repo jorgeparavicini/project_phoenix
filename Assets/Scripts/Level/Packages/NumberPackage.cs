@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Data;
-using Extensions;
+using Phoenix.Data;
+using Phoenix.Extensions;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-namespace Level.Packages
+namespace Phoenix.Level.Packages
 {
     public class NumberPackage : Package
     {
@@ -52,8 +50,7 @@ namespace Level.Packages
             }
         }
 
-        public List<TextMeshProUGUI> DisplayTexts =>
-            _displayTexts ?? (_displayTexts = GetComponentsInChildren<TextMeshProUGUI>().ToList());
+        public List<TextMeshProUGUI> DisplayTexts => _displayTexts = GetComponentsInChildren<TextMeshProUGUI>().ToList();
 
         private void OnEnable()
         {

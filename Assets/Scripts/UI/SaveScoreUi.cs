@@ -1,10 +1,10 @@
-﻿using Level;
-using Score;
+﻿using Phoenix.Level;
+using Phoenix.Score;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UI
+namespace Phoenix.UI
 {
     public class SaveScoreUi : MonoBehaviour
     {

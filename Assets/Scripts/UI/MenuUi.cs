@@ -1,33 +1,39 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuUi : MonoBehaviour
+namespace Phoenix.UI
 {
-    public GameObject MenuObject;
-    public GameObject ScoreObject;
-
-    private void Start()
+    public class MenuUi : MonoBehaviour
     {
-        MenuObject.SetActive(true);
-        ScoreObject.SetActive(false);
-    }
+        public GameObject MenuObject;
+        public GameObject ScoreObject;
 
-    public void StartLevel(string levelName)
-    {
-        SceneManager.LoadScene(levelName);
-    }
+        private void Start()
+        {
+            MenuObject.SetActive(true);
+            ScoreObject.SetActive(false);
+        }
 
-    public void ShowScores()
-    {
-        MenuObject.SetActive(false);
-        ScoreObject.SetActive(true);
-    }
+        public void StartLevel(string levelName)
+        {
+            SceneManager.LoadScene(levelName);
+        }
 
-    public void Quit()
-    {
-        Application.Quit();
+        public void ShowScores()
+        {
+            MenuObject.SetActive(false);
+            ScoreObject.SetActive(true);
+        }
+        public void ShowMenu()
+        {
+            MenuObject.SetActive(true);
+            ScoreObject.SetActive(false);
+        }
+    
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
     }
 }
