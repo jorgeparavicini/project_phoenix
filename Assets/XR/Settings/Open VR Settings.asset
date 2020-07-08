@@ -14,18 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StereoRenderingMode: 1
   InitializationType: 1
-<<<<<<< HEAD
-  EditorAppKey: application.generated.unity.legacy.projectphoenix.1404449664.exe
+  EditorAppKey: application.generated.unity.legacy.projectphoenix.1537019776.exe
   IsLegacy: 1
   ActionManifestFileRelativeFilePath: C:/Users/rausisal/Documents/VRJorge/project_phoenix/Assets/StreamingAssets\SteamVR\legacy_manifest.json
-=======
-  EditorAppKey: application.generated.unity.legacy.projectphoenix.1451340672.exe
-  IsLegacy: 1
-<<<<<<<< HEAD:Assets/XR/Settings/Open VR Settings.asset
-  ActionManifestFileRelativeFilePath: D:/project_phoenix/Assets/StreamingAssets\SteamVR\legacy_manifest.json
-========
-  ActionManifestFileRelativeFilePath: C:/Users/rausisal/Documents/VRJorge/project_phoenix/Assets/StreamingAssets\SteamVR\legacy_manifest.json
->>>>>>>> 18ba0fd80c3d1799bdbc6804ef00acad9287b9de:Assets/Packages/XR/Settings/Open VR Settings.asset
->>>>>>> 18ba0fd80c3d1799bdbc6804ef00acad9287b9de
   MirrorViewMode: 3
   HasCopiedDefaults: 0
