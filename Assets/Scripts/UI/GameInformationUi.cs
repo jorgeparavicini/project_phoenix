@@ -41,6 +41,9 @@ namespace Phoenix.UI
         private void OnGameStarted(object sender, System.EventArgs e)
         {
             GameStartDelayText.gameObject.SetActive(false);
+            TimeText.gameObject.SetActive(true);
+            ScoreText.gameObject.SetActive(true);
+            ScoreBoxRawImage.gameObject.SetActive(true);
         }
 
         private void OnGameStarterTimeUpdated(object sender, TimeUpdatedEventArgs e)
