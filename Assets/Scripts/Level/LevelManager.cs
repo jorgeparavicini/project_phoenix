@@ -20,19 +20,16 @@ namespace Phoenix.Level
         private bool _hasGameStarted = false;
 
         // Required by the High Score Manager to initialize the score json file.
-        [SerializeField] internal string _levelName;
-        [SerializeField] private float _gameDuration = 120;
-        [SerializeField] private float _gameStartDelay = 3;
-        [SerializeField] private bool _autoStart = false;
+        public LevelData levelData;
 
 
         public static bool IsGameOver => _instance._isGameOver;
         public static bool HasGameStarted => _instance._hasGameStarted;
 
 
-        public static float GameDuration => _instance._gameDuration;
-        public static float GameStartDelay => _instance._gameStartDelay;
-        public static string LevelName => _instance._levelName;
+        public static float GameDuration => _instance.levelData.gameDuration;
+        public static float GameStartDelay => _instance.levelData.gameStartDelay;
+        public static string LevelName => _instance.levelData.levelName;
 
 
         public static event EventHandler<TimeUpdatedEventArgs> TimeUpdated = delegate { };
@@ -53,7 +50,7 @@ namespace Phoenix.Level
 
         private void Start()
         {
-            if (_autoStart) StartGame();
+            if (levelData.autoStart) StartGame();
         }
 
 
@@ -89,9 +86,9 @@ namespace Phoenix.Level
             if (IsGameOver) return;
 
             _currentGameTime += Time.deltaTime;
-            TimeUpdated(this, new TimeUpdatedEventArgs(_currentGameTime, _gameDuration));
+            TimeUpdated(this, new TimeUpdatedEventArgs(_currentGameTime, levelData.gameDuration));
 
-            if (!(_currentGameTime >= _gameDuration)) return;
+            if (!(_currentGameTime >= levelData.gameDuration)) return;
 
             _isGameOver = true;
             GameOver(this, System.EventArgs.Empty);
