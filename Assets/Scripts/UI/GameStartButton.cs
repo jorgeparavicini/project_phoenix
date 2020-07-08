@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Level;
+using Phoenix.Level;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace Phoenix.UI
 {
     public class GameStartButton : MonoBehaviour
     {

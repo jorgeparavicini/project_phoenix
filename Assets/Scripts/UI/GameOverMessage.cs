@@ -1,8 +1,8 @@
-﻿using Level;
+﻿using Phoenix.Level;
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace Phoenix.UI
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class GameOverMessage : MonoBehaviour

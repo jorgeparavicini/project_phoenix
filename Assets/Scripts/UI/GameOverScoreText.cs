@@ -1,10 +1,10 @@
 ﻿using System;
-using Level;
-using Score;
+using Phoenix.Level;
+using Phoenix.Score;
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace Phoenix.UI
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class GameOverScoreText : MonoBehaviour
