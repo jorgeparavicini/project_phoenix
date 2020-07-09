@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfdfdccd6f90b54fbe4ac48b7667be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 5
+  Score: 1
   Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &5551788907701563514
 PrefabInstance:
